@@ -1,0 +1,31 @@
+Owen Stadlwieser and Martin Rudolf
+Assignment 2: Part 2
+CMPUT274, F2019
+
+Files in archive:
+encrypted_communication_part2.cpp Makefile
+
+Running Instructions:
+This file contains an encrypted chat program designed to run between two arduinos. To run the program construct each Arduino according to the specification outlined below in "Wiring instructions". Type "arduino-port-select". Enter "1", then enter "1" again. Finally, enter "make upload && serial-mon". Once the program has been uploaded the two arduinos will generate their own set of encryption keys and modulus, the public keys and modulus will be exchanged over the serial 3 port with RSA handshake protocol. After key exchange keyboard input will be recieved through the serial monitor, encrypted, written to serial-3 monitor, decrypted by the other arduino, and written to the serial monitor. 
+
+Wiring instructions:
+
+1.Two Arduino's are necessary. Choose one of them to be Arduino A and the other to be Arduino B, Arduino A acts as client, Arduino B as server.
+
+2. On Arduino A connect a wire from a ground pin to pin 13. Connect a second wire from another ground on Arduino A to a ground on Arduino B. 
+
+3.Connect a wire from TX3 on Arduino A to RX3 on the Arduino B. Connect another wire from RX3 on Arduino A to TX3 on Arduino B. 
+
+4. On Arduino B, conenct a wire from the 5V pin to a positive bus terminal on a breadboard. From that same positive terminal, connect a 330 resistor to pin 13 on Arduino B. 
+
+5. Plug each Arduino into a computer. 
+
+Credit:
+
+Built our Part 2 implementation using "Encrypted Communcation Part 1 Solution" that was posted on eClass as starting code. Used the "gcd_euclid_fast" function found in the "gcd_and_randompin.tar.gz" file found on eClass.
+README "Running Instructions" and "Wiring Instructions" are from our submitted README for Part 1. 
+Used functions included in "Encrypted Arduino Communication: Description" on eClass. 
+
+Other:
+
+No known bugs. Satisfied specifications when ran with partners solution. No extra functionality added. 
